@@ -1,0 +1,61 @@
+
+:root{
+  --bg:#0f172a; /* slate-900 */
+  --card:#111827; /* gray-900 */
+  --fg:#e5e7eb; /* gray-200 */
+  --muted:#94a3b8; /* slate-400 */
+  --accent:#38bdf8; /* sky-400 */
+  --accent-2:#22d3ee; /* cyan-400 */
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: linear-gradient(180deg, #0b1220, var(--bg));
+  color: var(--fg);
+  line-height:1.7;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{opacity:.9}
+.container{max-width:1040px;margin:0 auto;padding:0 20px}
+.site-header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(8,15,27,.7);backdrop-filter:saturate(150%) blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .logo{width:28px;height:28px}
+.brand-name{font-weight:700;letter-spacing:.2px}
+.nav a{margin-left:18px}
+.hero{
+  padding:72px 0 56px;
+  text-align:center;
+}
+.hero h1{font-size: clamp(28px, 4vw, 40px); margin: 0 0 10px}
+.hero .lead{font-size: clamp(16px, 2.2vw, 18px); color: var(--muted); margin: 0 0 6px}
+.hero .est{font-size:14px; color:var(--accent-2)}
+.section{padding:56px 0}
+.section.alt{background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00))}
+h2{font-size: clamp(22px, 3vw, 28px); margin: 0 0 16px}
+.about-grid{
+  display:grid;grid-template-columns:120px 1fr;gap:12px 20px;
+  background: rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06);
+  padding:16px 18px; border-radius:14px;
+}
+.about-grid dt{color:var(--muted)}
+.about-grid dd{margin:0}
+.service-list{
+  display:grid; gap:12px; padding:0; margin:0; list-style:none;
+}
+.service-list li{
+  background: rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:14px; padding:14px 16px;
+}
+.site-footer{border-top:1px solid rgba(255,255,255,.06); padding:22px 0; text-align:center; margin-top:28px}
+.note{color:var(--muted); font-size: 14px}
+@media (max-width:640px){
+  .about-grid{grid-template-columns:1fr}
+  .nav a{margin-left:12px}
+}
