@@ -24,22 +24,25 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>未来を加速させるテクノロジー</h1>
-        <p class="lead">Fastnautは、中小企業のDX支援とWebアプリ開発でビジネスの成長を支援します。</p>
-        <p class="est">設立予定：2025年10月</p>
-      </div>
-    </section>
+  <!-- 🔹 トップ画像スライダー -->
+  <section class="hero-slider">
+    <div class="slider">
+      <img src="images/slide1.jpg" class="slide active" alt="Fastnaut イメージ1">
+      <img src="images/slide2.jpg" class="slide" alt="Fastnaut イメージ2">
+      <img src="images/slide3.jpg" class="slide" alt="Fastnaut イメージ3">
+      <img src="images/slide3.jpg" class="slide" alt="Fastnaut イメージ4">
+      <img src="images/slide3.jpg" class="slide" alt="Fastnaut イメージ5">
+    </div>
+  </section>
 
+  <main>
     <section id="about" class="section">
       <div class="container">
         <h2>会社概要</h2>
         <dl class="about-grid">
           <dt>社名</dt><dd>Fastnaut</dd>
           <dt>設立</dt><dd>2025年10月</dd>
-          <dt>所在地</dt><dd>（例）東京都〇〇区</dd>
+          <dt>所在地</dt><dd>東京都〇〇区</dd>
           <dt>事業内容</dt><dd>ITソリューション開発、DX支援、データ活用</dd>
         </dl>
       </div>
@@ -72,5 +75,23 @@
       <small>&copy; 2025 Fastnaut Inc. All Rights Reserved.</small>
     </div>
   </footer>
+
+  <!-- 🔹 スライダーのスクリプト -->
+  <script>
+    let slides = document.querySelectorAll('.slide');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((s, i) => {
+        s.classList.toggle('active', i === index);
+      });
+    }
+
+    // 自動再生（5秒ごと）
+    setInterval(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }, 5000);
+  </script>
 </body>
 </html>

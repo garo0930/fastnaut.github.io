@@ -1,11 +1,10 @@
-
 :root{
-  --bg:#0f172a; /* slate-900 */
-  --card:#111827; /* gray-900 */
-  --fg:#e5e7eb; /* gray-200 */
-  --muted:#94a3b8; /* slate-400 */
-  --accent:#38bdf8; /* sky-400 */
-  --accent-2:#22d3ee; /* cyan-400 */
+  --bg:#0f172a;
+  --card:#111827;
+  --fg:#e5e7eb;
+  --muted:#94a3b8;
+  --accent:#38bdf8;
+  --accent-2:#22d3ee;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
@@ -28,13 +27,31 @@ a:hover{opacity:.9}
 .brand .logo{width:28px;height:28px}
 .brand-name{font-weight:700;letter-spacing:.2px}
 .nav a{margin-left:18px}
-.hero{
-  padding:72px 0 56px;
-  text-align:center;
+
+/* 🔹 スライダー */
+.hero-slider {
+  position: relative;
+  max-width: 100%;
+  height: 400px;     /* 高さはお好みで調整 */
+  overflow: hidden;
 }
-.hero h1{font-size: clamp(28px, 4vw, 40px); margin: 0 0 10px}
-.hero .lead{font-size: clamp(16px, 2.2vw, 18px); color: var(--muted); margin: 0 0 6px}
-.hero .est{font-size:14px; color:var(--accent-2)}
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.slide.active {
+  opacity: 1;
+}
+
 .section{padding:56px 0}
 .section.alt{background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00))}
 h2{font-size: clamp(22px, 3vw, 28px); margin: 0 0 16px}
